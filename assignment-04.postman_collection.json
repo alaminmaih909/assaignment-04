@@ -1,0 +1,231 @@
+{
+	"info": {
+		"_postman_id": "58616f71-8924-4baa-8f33-bd423a33822d",
+		"name": "assignment-04",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38173322"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "firstName",
+							"value": "Alamin",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Miah",
+							"type": "text"
+						},
+						{
+							"key": "NIDNumber",
+							"value": "123456789",
+							"type": "text"
+						},
+						{
+							"key": "phoneNumber",
+							"value": "01302531461",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "bloodGroup",
+							"value": "b+",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base}}/register",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "phoneNumber",
+							"value": "01302531461",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base}}/login",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "profile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base}}/profile",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "allProfile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base}}/allProfile",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"allProfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update User Data",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "firstName",
+							"value": "Alamin Khan",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Alamin Khan",
+							"type": "text"
+						},
+						{
+							"key": "NIDNumber",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "phoneNumber",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "bloodGroup",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base}}/updateUserData",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"updateUserData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete Profile",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base}}/deleteProfile",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"deleteProfile"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base",
+			"value": "http://localhost:5000/api/users",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZU51bWJlciI6IjAxMzAyNTMxNDYxIiwidXNlcl9pZCI6IjY3NjI3YzMwMDRhNWFmZWFkNDg5NzQxNiIsImlhdCI6MTczNDUwNzU4MCwiZXhwIjoxNzM0NTI5MTgwfQ.Gv3WC2JpDPQFY2BmhBzNww8KQiyCE_h31ZkkTM-Y-s0",
+			"type": "string"
+		}
+	]
+}
