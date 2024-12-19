@@ -82,7 +82,7 @@ const updateUserData = async (req, res) => {
       updates.password = await bcrypt.hash(updates.password, salt);
     }
     const user = await userModel.findByIdAndUpdate(req.headers.user_id, updates, { new: true });
-    console.log(user)
+
     
     if (!user) return res.status(404).json({ message: "User not found" });
 
