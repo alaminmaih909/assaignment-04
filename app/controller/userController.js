@@ -73,16 +73,25 @@ const allProfile = async (req, res)=>{
 // Update user data
 
 const updateUserData = async (req, res) => {
-    try {
-        const updates = req.body;
-        const user = await userModel.findByIdAndUpdate(req.headers.user_id, updates, { new: true });
+
+  try {
+    const updates = req.body;
+
+    if (updates.password) {
+      const salt = await bcrypt.genSalt(10);
+      updates.password = await bcrypt.hash(updates.password, salt);
+    }
+    const user = await userModel.findByIdAndUpdate(req.headers.user_id, updates, { new: true });
+    console.log(user)
     
-        if (!user) return res.status(404).json({ message: "User not found" });
-    
-        res.status(200).json({ message: "Profile updated successfully", user });
-      } catch (error) {
-        res.status(500).json({ message: "Server Error", error });
-      }
+    if (!user) return res.status(404).json({ message: "User not found" });
+
+    res.status(200).json({ message: "Profile updated successfully", user });
+
+  } catch (error) {
+
+    res.status(500).json({ message: "Server Error", error });
+  }
 }
 
 // Delete User data
@@ -105,3 +114,6 @@ module.exports ={
     updateUserData,
     deleteProfile
 }
+
+
+
